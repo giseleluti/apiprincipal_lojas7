@@ -1,0 +1,50 @@
+
+services:
+  apiprincipal_lojas7:
+    build:
+      context: .  # Indica o diretório atual (onde está o Dockerfile)
+      dockerfile: Dockerfile  # Especifica o nome do Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      PRODUTOS: "http://127.0.0.1:5001"
+      USUARIOS: "http://127.0.0.1:5002"
+      PEDIDOS: "http://127.0.0.1:5003"
+      APIPRINCIPAL: "http://127.0.0.1:5000"
+    depends_on:
+      - produtos_lojas7
+      - usuarios_lojas7
+      - pedidos_lojas7
+    networks:
+      - minha-rede
+
+  produtos_lojas7:
+    build:
+      context: ../produtos_lojas7 # Caminho para o Dockerfile da API 1
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    networks:
+      - minha-rede
+
+  usuarios_lojas7:
+    build:
+      context: ../usuarios_lojas7 # Caminho para o Dockerfile da API 2
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    networks:
+      - minha-rede
+
+  pedidos_lojas7:
+    build:
+      context: ../pedidos_lojas7
+      dockerfile: Dockerfile
+    ports:
+      - "5003:5003"
+    networks:
+      - minha-rede
+
+networks:
+  minha-rede:
+    driver: bridge

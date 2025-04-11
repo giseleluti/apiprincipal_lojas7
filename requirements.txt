@@ -1,0 +1,4 @@
+flask
+requests
+swagger-ui-bundle
+flask_swagger_ui

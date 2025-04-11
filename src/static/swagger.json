@@ -1,0 +1,122 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API Principal Loja7",
+    "version": "1.0.0",
+    "description": "API de acesso principal."
+  },
+  "paths": {
+    "/produtos": {
+      "get": {
+        "summary": "Acessa a API de Produtos.",
+        "description": "Encaminha as requisições GET para a API de Produtos.  <br><a href=\"http://127.0.0.1:5000/produtos\" target=\"_blank\">Acessar Serviço de Pedidos</a>",
+        "responses": {
+          "200": {
+            "description": "Acesso à API de Produtos realizado com sucesso.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Acesso à API de Produtos realizado."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "API de Produtos não encontrada ou indisponível."
+          },
+          "500": {
+            "description": "Erro ao comunicar com a API de Produtos."
+          }
+        }
+      }
+    },
+    "/usuarios": {
+      "get": {
+        "summary": "Acessa a API de Autenticação de Usuários.",
+        "description": "Encaminha as requisições GET para a API de Autenticação de Usuários. <br><a href=\"http://127.0.0.1:5000/usuarios\" target=\"_blank\">Acessar Serviço de Usuários</a>",
+        "responses": {
+          "200": {
+            "description": "Acesso à API de Autenticação de Usuários realizado com sucesso.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Acesso à API de Autenticação de Usuários realizado."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "API de Autenticação de Usuários não encontrada ou indisponível."
+          },
+          "500": {
+            "description": "Erro ao comunicar com a API de Autenticação de Usuários."
+          }
+        }
+      }
+    },
+    "/pedidos": {
+      "get": {
+        "summary": "Acessa a API de Pedidos.",
+        "description": "Encaminha as requisições GET para a API de Pedidos. <br><a href=\"http://127.0.0.1:5000/pedidos\" target=\"_blank\">Acessar Serviço de Pedidos</a>",
+        "responses": {
+          "200": {
+            "description": "Acesso à API de Pedidos realizado com sucesso.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Acesso à API de Pedidos realizado."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "API de Pedidos não encontrada ou indisponível."
+          },
+          "500": {
+            "description": "Erro ao comunicar com a API de Pedidos."
+          }
+        }
+      }
+    },
+    "/requests_count": {
+      "get": {
+        "summary": "Retorna um objeto JSON contendo o número de requisições GET para os endpoints /usuarios, /produtos e /pedidos.",
+        "description": "Obtém a contagem de requisições para os endpoints principais. <br><a href=\"http://127.0.0.1:5000/requests_count\" target=\"_blank\">Acessarcontagem de visitantes</a>",
+        "responses": {
+          "200": {
+            "description": "Contagem de requisições obtida com sucesso.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pedidos": {
+                  "type": "integer",
+                  "example": 4
+                },
+                "produtos": {
+                  "type": "integer",
+                  "example": 2
+                },
+                "usuarios": {
+                  "type": "integer",
+                  "example": 2
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Endpoint para contagem de requisições não encontrado."
+          },
+          "500": {
+            "description": "Erro ao obter a contagem de requisições."
+          }
+        }
+      }
+    }
+  }
+}
