@@ -36,6 +36,27 @@ Este projeto implementa um API Gateway principal em Python utilizando Flask e Do
 4. **Proxy Genérico para APIs de Backend:**
    * Fornece uma rota genérica em `/<service>/<path:path>` para encaminhar requisições (GET, POST, PUT, DELETE) para as APIs de backend subjacentes. Isso permite que a API Gateway atue como um ponto de entrada para outras funcionalidades das APIs, embora atualmente o foco principal seja a documentação.
 
+## Imagem das APIS integradas:
+graph TD
+    subgraph Lojas7
+        A[API Principal] --> B(API de Usuários);
+        A --> C(API de Produtos);
+        A --> D(API de Pedidos);
+
+        B -- Autentica, Valida Dados, Persiste Dados, Simula Login --> B;
+
+        C -- Integração --> E[FakeStore API (Externa)];
+        C -- Cache de Produtos --> D;
+
+        D -- Cadastra Pedidos --> D;
+
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#ccf,stroke:#333,stroke-width:2px
+        style C fill:#9cf,stroke:#333,stroke-width:2px
+        style D fill:#fcc,stroke:#333,stroke-width:2px
+        style E fill:#eee,stroke:#333,stroke-width:2px
+    end
+
 ## Execução
 
 1. **Clone os 4 Repositórios e navegue para a pasta da API Principal:**
