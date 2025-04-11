@@ -9,24 +9,21 @@ Este projeto implementa um API Gateway principal em Python utilizando Flask e Do
 * **Documentação Swagger:** Fornece acesso à documentação Swagger das APIs Python através de rotas dedicadas.
 * **Orquestração com Docker Compose:** Facilita a implantação e o gerenciamento de todos os serviços (API Gateway e APIs) utilizando Docker Compose.
 
-## Requisitos Mínimos para Execução
-
-* **Docker:** Certifique-se de que o Docker esteja instalado e em execução em seu sistema.
-* **Docker Compose:** Certifique-se de que o Docker Compose esteja instalado em seu sistema.
-* **APIs Dependentes:** As três APIs devem estar disponíveis em um diretório raiz.
-* **Python:** Versão 3.9 ou superior instalada.
-* **Pip:** Gerenciador de pacotes do Python instalado.
 
 ## Detalhamento das Rotas
 
-1. **Redirecionamento para a Documentação Swagger das APIs Python:**
+1. **Servir a Documentação Swagger da Própria API Gateway:**
+   * A interface Swagger UI para documentar a própria API Principal está disponível em `/swagger/api`.
+
+   http://127.0.0.1:5000/swagger/api
+
+   * Você poderá utilizar o ponto de entrada dela para acessar na `descrição` os endpoints oficiais de cada serviço dentro do Swagger-ui.
+
+2. **Redirecionamento para a Documentação Swagger das APIs Python:**
    * `/usuarios` -> Redireciona para a Swagger UI da API de Usuários (`/swagger/`).
    * `/produtos` -> Redireciona para a Swagger UI da API de Produtos (`/apidocs/`).
    * `/pedidos` -> Redireciona para a Swagger UI da API de Pedidos (`/apidocs/`).
 
-2. **Servir a Documentação Swagger da Própria API Gateway:**
-   * A interface Swagger UI para documentar a própria API Principal está disponível em `/swagger/api`.
-   * Você poderá utilizar o ponto de entrada dela para acessar na `descrição` os endpoints oficiais de cada serviço.
    * A especificação da API Gateway é servida em `/static/swagger.json`.
 
 3. **Contagem de Acessos à Documentação:**
@@ -39,6 +36,14 @@ Este projeto implementa um API Gateway principal em Python utilizando Flask e Do
 ## Imagem das APIS integradas:
 Está disponível na raiz do projeto com o nome
 `Lojas7-fluxograma_ Mermaid Chart-2025-04-11-221111 `
+
+## Requisitos Mínimos para Execução
+
+* **Docker:** Certifique-se de que o Docker esteja instalado e em execução em seu sistema.
+* **Docker Compose:** Certifique-se de que o Docker Compose esteja instalado em seu sistema.
+* **APIs Dependentes:** As três APIs devem estar disponíveis em um diretório raiz.
+* **Python:** Versão 3.9 ou superior instalada.
+* **Pip:** Gerenciador de pacotes do Python instalado.
 
 ## Execução
 
