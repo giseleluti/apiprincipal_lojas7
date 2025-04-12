@@ -9,7 +9,7 @@
     "/produtos": {
       "get": {
         "summary": "Acessa a API de Produtos.",
-        "description": "Encaminha as requisições GET para a API de Produtos.  <br><a href=\"http://127.0.0.1:5000/produtos\" target=\"_blank\">Acessar Serviço de Pedidos</a>",
+        "description": "Encaminha as requisições GET para a API de Produtos.  <br><a href=\"http://127.0.0.1:5000/produtos\" target=\"_blank\">Acessar Serviço de Produtos</a>",
         "responses": {
           "200": {
             "description": "Acesso à API de Produtos realizado com sucesso.",
