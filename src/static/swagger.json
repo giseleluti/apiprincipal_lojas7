@@ -9,19 +9,10 @@
     "/produtos": {
       "get": {
         "summary": "Acessa a API de Produtos.",
-        "description": "Encaminha as requisições GET para a API de Produtos.  <br><a href=\"http://127.0.0.1:5000/produtos\" target=\"_blank\">Acessar Serviço de Produtos</a>",
+        "description": "Encaminha as requisições GET para a API de Produtos. <br><a href=\"/produtos\" target=\"_blank\">Acessar Documentação da API de Produtos</a>",
         "responses": {
-          "200": {
-            "description": "Acesso à API de Produtos realizado com sucesso.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "Acesso à API de Produtos realizado."
-                }
-              }
-            }
+          "302": {
+            "description": "Redirecionamento para a interface Swagger da API de Produtos"
           },
           "404": {
             "description": "API de Produtos não encontrada ou indisponível."
@@ -35,19 +26,10 @@
     "/usuarios": {
       "get": {
         "summary": "Acessa a API de Autenticação de Usuários.",
-        "description": "Encaminha as requisições GET para a API de Autenticação de Usuários. <br><a href=\"http://127.0.0.1:5000/usuarios\" target=\"_blank\">Acessar Serviço de Usuários</a>",
+        "description": "Encaminha as requisições GET para a API de Autenticação de Usuários. <br><a href=\"/usuarios\" target=\"_blank\">Acessar Documentação da API de Usuários</a>",
         "responses": {
-          "200": {
-            "description": "Acesso à API de Autenticação de Usuários realizado com sucesso.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "Acesso à API de Autenticação de Usuários realizado."
-                }
-              }
-            }
+          "302": {
+            "description": "Redirecionamento para a interface Swagger da API de Autenticação de Usuários"
           },
           "404": {
             "description": "API de Autenticação de Usuários não encontrada ou indisponível."
@@ -61,19 +43,10 @@
     "/pedidos": {
       "get": {
         "summary": "Acessa a API de Pedidos.",
-        "description": "Encaminha as requisições GET para a API de Pedidos. <br><a href=\"http://127.0.0.1:5000/pedidos\" target=\"_blank\">Acessar Serviço de Pedidos</a>",
+        "description": "Encaminha as requisições GET para a API de Pedidos. <br><a href=\"/pedidos\" target=\"_blank\">Acessar Documentação da API de Pedidos</a>",
         "responses": {
-          "200": {
-            "description": "Acesso à API de Pedidos realizado com sucesso.",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "Acesso à API de Pedidos realizado."
-                }
-              }
-            }
+          "302": {
+            "description": "Redirecionamento para a interface Swagger da API de Pedidos"
           },
           "404": {
             "description": "API de Pedidos não encontrada ou indisponível."
@@ -87,7 +60,7 @@
     "/requests_count": {
       "get": {
         "summary": "Retorna um objeto JSON contendo o número de requisições GET para os endpoints /usuarios, /produtos e /pedidos.",
-        "description": "Obtém a contagem de requisições para os endpoints principais. <br><a href=\"http://127.0.0.1:5000/requests_count\" target=\"_blank\">Acessarcontagem de visitantes</a>",
+        "description": "Obtém a contagem de requisições para os endpoints principais. <br><a href=\"/requests_count\" target=\"_blank\">Acessar contagem de visitantes</a>",
         "responses": {
           "200": {
             "description": "Contagem de requisições obtida com sucesso.",

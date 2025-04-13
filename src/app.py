@@ -21,10 +21,10 @@ app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
 
 # Configuração das URLs das APIs
 API_URLS = {
-    "produtos": os.environ.get("PRODUTOS", "http://127.0.0.1:5001"),
-    "usuarios": os.environ.get("USUARIOS", "http://127.0.0.1:5002"),
-    "pedidos": os.environ.get("PEDIDOS", "http://127.0.0.1:5003"),
-    "APIPRINCIPAL": os.environ.get("APIPRINCIPAL", "http://127.0.0.1:5000")
+    "produtos": os.environ.get("PRODUTOS", "http://produtos_lojas7:5001"),
+    "usuarios": os.environ.get("USUARIOS", "http://usuarios_lojas7:5002"),
+    "pedidos": os.environ.get("PEDIDOS", "http://pedidos_lojas7:5003"),
+    "APIPRINCIPAL": os.environ.get("APIPRINCIPAL", "http://apiprincipal_lojas7:5000")
 }
 
 
@@ -37,28 +37,26 @@ request_counts = {
 
 
 # Rota para redirecionar para a interface Swagger UI da API de usuários e incrementar o contador
+# Rota para redirecionar para a interface Swagger UI da API de usuários e incrementar o contador
 @app.route('/usuarios')
 @app.route('/usuarios/')
 def redirect_usuarios_swagger():
     request_counts["usuarios"] += 1
-    return redirect(f"{API_URLS['usuarios']}/swagger/")
-
+    return redirect(f"http://localhost:5002/swagger/")
 
 # Rota para redirecionar para a interface Swagger UI da API de produtos e incrementar o contador
 @app.route('/produtos')
 @app.route('/produtos/')
 def redirect_produtos_swagger():
     request_counts["produtos"] += 1
-    return redirect(f"{API_URLS['produtos']}/apidocs/")
-
+    return redirect(f"http://localhost:5001/apidocs/")
 
 # Rota para redirecionar para a interface Swagger UI da API de pedidos e incrementar o contador
 @app.route('/pedidos')
 @app.route('/pedidos/')
 def redirect_pedidos_swagger():
     request_counts["pedidos"] += 1
-    return redirect(f"{API_URLS['pedidos']}/apidocs/")
-
+    return redirect(f"http://localhost:5003/apidocs/")
 
 # Rota para exibir a contagem de requisições
 @app.route('/requests_count')

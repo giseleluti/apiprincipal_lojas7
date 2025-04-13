@@ -7,10 +7,10 @@ services:
     ports:
       - "5000:5000"
     environment:
-      PRODUTOS: "http://127.0.0.1:5001"
-      USUARIOS: "http://127.0.0.1:5002"
-      PEDIDOS: "http://127.0.0.1:5003"
-      APIPRINCIPAL: "http://127.0.0.1:5000"
+      PRODUTOS: "http://produtos_lojas7:5001"  
+      USUARIOS: "http://usuarios_lojas7:5002"  
+      PEDIDOS: "http://pedidos_lojas7:5003"    
+      APIPRINCIPAL: "http://apiprincipal_lojas7:5000" 
     depends_on:
       - produtos_lojas7
       - usuarios_lojas7
